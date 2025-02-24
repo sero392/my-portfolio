@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        lobster: ["Lobster", "cursive"], // Tailwind için özel font tanımı
+      },
       boxShadow: {
         'inset-sm': 'inset 0 1px 3px rgba(0, 0, 0, 0.1)',
         'inset-md': 'inset 0 4px 6px rgba(0, 0, 0, 0.1)',

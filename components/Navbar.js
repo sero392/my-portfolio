@@ -1,10 +1,12 @@
+ 
+
 export default function Navbar() {
     return (
         <div className="navbar-container grid grid-cols-1 md:grid-cols-2 gap-1 bg-zinc-800 text-zinc-50 shadow-md shadow-teal-700">
             <div className="navbar-left p-5">
-                <h2>
+                <span className="text-2xl font-lobster" >
                    Serhan Çelik 
-                </h2>
+                </span>
             </div>
             <div className="navbar-right px-5">
                 <ul className="navbar-menu grid grid-cols-5">
@@ -16,11 +18,6 @@ export default function Navbar() {
                     <li className="navbar-menu-item text-center py-5  hover:bg-teal-200 hover:text-zinc-800 hover:shadow-lg hover:shadow-zinc-800">
                         <span className="font-medium">
                             Eğitim
-                        </span>
-                    </li>
-                    <li className="navbar-menu-item text-center py-5  hover:bg-teal-200 hover:text-zinc-800 hover:shadow-lg hover:shadow-zinc-800">
-                        <span className="font-medium">
-                            Hizmetler
                         </span>
                     </li>
                     <li className="navbar-menu-item text-center py-5  hover:bg-teal-200 hover:text-zinc-800 hover:shadow-lg hover:shadow-zinc-800">
