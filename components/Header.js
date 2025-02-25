@@ -6,14 +6,14 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function Header() {
   return (
-    <div className="header-container grid grid-cols-2 bg-zinc-800">
+    <div className="header-container grid grid-cols-2 bg-blue-950">
       <div className="header-left flex flex-col py-[100px] px-7">
         <div className="header-title text-6xl text-zinc-50">
           Merhaba, Ben Serhan
         </div>
         <div className="header-moving-text text-zinc-50 mt-4 text-2xl">
           Ben
-          <span className="text-teal-700">
+          <span className="text-blue-50">
             <Typewriter
               style
               words={[
@@ -32,7 +32,7 @@ export default function Header() {
         </div>
         <div className="header-paragraph"></div>
         <div className="header-social-media max-w-[150px] mt-5">
-          <ul className="grid grid-cols-4 text-teal-400">
+          <ul className="grid grid-cols-4 text-blue-50">
             <li>
               <Instagram size={24} />
             </li>
@@ -51,7 +51,7 @@ export default function Header() {
       <div className="header-right">
         <div className="right-image-container h-full flex">
             <Image
-              className="border-4 rounded-full shadow-teal-500/30 shadow-xl m-auto border-teal-700"
+              className="border-4 rounded-full shadow-blue-400/70 shadow-xl m-auto border-blue-50"
               width={250}
               height={250}
               alt="Serhan Çelik"
