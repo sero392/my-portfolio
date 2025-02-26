@@ -4,7 +4,7 @@ import Image from "next/image";
 import "../styles/references.css";
 
 async function getData() {
-  const response = await GetData("http://localhost:3000/api/data");
+  const response = await GetData("http://localhost:3000/api/references");
   return await response.json();
 }
 
@@ -28,17 +28,22 @@ export default async function References() {
         {response?.data?.map((m, index) => (
           <div
             key={index}
-            className="bg-blue-950  rounded-md m-auto p-3 
-                      flex-1 min-h-80 animate-glow
-                      flex flex-col items-center justify-center"
+            className="bg-blue-950  rounded-md m-auto p-3  min-h-[100px] 
+                      hover:min-h-[500px]
+                      animate-glow
+                      min-w-[550px]  
+                      flex flex-col items-center justify-center 
+                       transition-all  duration-700
+                     
+                      "
           >
             <div className="flex justify-center pt-10">
-              <Image
+              <img
                 className="rounded-full"
                 alt="referans resmi"
                 width={100}
                 height={100}
-                src="/images/S.jpg"
+                src={m.ReferencePhotoURL}
               />
             </div>
 

@@ -12,7 +12,6 @@ export async function GetData(API_URL, IS_AUTH = true) {
       method: "GET",
       headers: headers,
     });
-
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData?.message || "API ERROR!!");

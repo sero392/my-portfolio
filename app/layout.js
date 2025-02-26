@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="shadow-inset-lg shadow-teal-500/50 p-3">
+      <body className="shadow-inset-lg shadow-blue-800/80 p-3">
         <Navbar />
         {children}
       </body>

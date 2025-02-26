@@ -1,10 +1,15 @@
-"use client";
-
+import { GetData } from "@/utils/ApiUtil";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
-import { Typewriter } from "react-simple-typewriter";
+import TypeWriter from "./TypeWriter";
 
-export default function Header() {
+async function getData() {
+  const response = await GetData("http://localhost:3000/api/about");
+  return await response.json();
+}
+
+export default async function Header() {
+  const response = await getData();
   return (
     <div className="header-container grid grid-cols-2 bg-blue-950">
       <div className="header-left flex flex-col py-[100px] px-7">
@@ -14,21 +19,19 @@ export default function Header() {
         <div className="header-moving-text text-zinc-50 mt-4 text-2xl">
           Ben
           <span className="text-blue-50">
-            <Typewriter
-              style
+            <TypeWriter
               words={[
                 " Her şeyden önce insanım",
                 " Yazılımcıyım",
                 " Frontend Developer'ım",
                 " Fullstack Developer'ım",
               ]}
-              loop={false}
-              cursor
-              cursorStyle="|"
-              typeSpeed={100}
-              deleteSpeed={50}
-            ></Typewriter>
+            ></TypeWriter>
           </span>
+        </div>
+
+        <div className="header-moving-text text-zinc-50 mt-4 text-sm">
+          <span className="text-blue-50 italic">{response?.data?.AboutText}</span>
         </div>
         <div className="header-paragraph"></div>
         <div className="header-social-media max-w-[150px] mt-5">
@@ -50,13 +53,16 @@ export default function Header() {
       </div>
       <div className="header-right">
         <div className="right-image-container h-full flex">
-            <Image
-              className="border-4 rounded-full shadow-blue-400/70 shadow-xl m-auto border-blue-50"
-              width={250}
-              height={250}
-              alt="Serhan Çelik"
-              src="/images/S.jpg"
-            />
+          <Image
+            className="border-4 rounded-full shadow-blue-200
+            hover:shadow-blue-400
+            transition-shadow duration-500 shadow-lg hover:shadow-2xl
+             m-auto border-blue-50"
+            width={250}
+            height={250}
+            alt="Serhan Çelik"
+            src="/images/S.jpg"
+          />
         </div>
       </div>
     </div>
