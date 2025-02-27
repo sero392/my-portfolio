@@ -4,6 +4,7 @@ import TimeLine from "@/components/Timeline";
 import References from "@/components/References";
 import Contact from "@/components/Contact";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <TimeLine></TimeLine>
       <References></References>
       <Projects></Projects>
+      <Skills></Skills>
       <Contact></Contact>
     </div>
   );

@@ -11,7 +11,7 @@ async function getData() {
 export default async function Header() {
   const response = await getData();
   return (
-    <div className="header-container grid grid-cols-2 bg-blue-950">
+    <div id="header" className="header-container grid grid-cols-2 bg-blue-950">
       <div className="header-left flex flex-col py-[100px] px-7">
         <div className="header-title text-6xl text-zinc-50">
           Merhaba, Ben Serhan

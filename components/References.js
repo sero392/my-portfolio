@@ -20,18 +20,21 @@ export default async function References() {
   };
 
   return (
-    <div className="bg-blue-950 text-zinc-50 mt-2 p-10">
+    <div id="references" className="bg-blue-950 text-zinc-50 mt-2 p-10">
       <div className="text-center">
         <span className="text-6xl font-bold text-center">Referanslar</span>
       </div>
-      <div className="flex mt-9 gap-9 px-20">
+      <div className="flex mt-9 gap-9 lg:px-20 flex-wrap">
         {response?.data?.map((m, index) => (
           <div
             key={index}
             className="bg-blue-950  rounded-md m-auto p-3  min-h-[100px] 
                       hover:min-h-[500px]
                       animate-glow
-                      min-w-[550px]  
+                      lg:w-[450px]
+                      md:w-[600px]
+                      sm:w-[100%]
+                      w-[100%]
                       flex flex-col items-center justify-center 
                        transition-all  duration-700
                      

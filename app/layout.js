@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import "../styles/globals.css";
 export default function RootLayout({ children }) {
   return (
-    <html lang="tr">
+    <html lang="tr" className=" scroll-smooth">
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"

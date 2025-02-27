@@ -11,7 +11,7 @@ import 'react-vertical-timeline-component/style.min.css';
 
 const Timeline = () => {
   return (
-    <div className="timeline-container  bg-blue-950 mt-2">
+    <div id="job-history" className="timeline-container  bg-blue-950 mt-2">
       <VerticalTimeline>
         <VerticalTimelineElement
           dateClassName="text-zinc-50 "
