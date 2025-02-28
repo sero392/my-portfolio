@@ -1,10 +1,11 @@
 import { GetData } from "@/utils/ApiUtil";
 import { Star } from "lucide-react";
-import Image from "next/image";
 import "../styles/references.css";
+import { memo } from "react";
 
 async function getData() {
-  const response = await GetData("http://localhost:3000/api/references");
+  const url = process.env.PUBLIC_NEXT_API_URL;
+  const response = await GetData(url + "api/references");
   return await response.json();
 }
 
@@ -12,11 +13,7 @@ export default async function References() {
   const response = await getData();
 
   const calculateStarCount = (count) => {
-    let arr = [];
-    for (let index = 0; index < count; index++) {
-      arr.push(<Star key={index} />);
-    }
-    return arr;
+    return Array.from({ length: count }, (_, index) => <Star key={index} />);
   };
 
   return (
@@ -55,9 +52,7 @@ export default async function References() {
             </div>
 
             <div className="card-title text-zinc-50 flex justify-center mt-4">
-              {
-                calculateStarCount(m.StarCount)?.map((m) => m)
-              }
+              {calculateStarCount(m.StarCount)?.map((m) => m)}
             </div>
             <div className="px-10 pb-20 mt-2">
               <span className="text-sm text-zinc-50">{m.ReferenceText}</span>

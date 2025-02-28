@@ -1,22 +1,33 @@
 "use client";
 
+import { GetData } from "@/utils/ApiUtil";
 import { School } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import 'react-vertical-timeline-component/style.min.css';
-
+import "react-vertical-timeline-component/style.min.css";
 
 const Timeline = () => {
+  const [jobData, setJobData] = useState(null);
+
+  async function getData() {
+    const response = await GetData("api/jobhistory");
+    return await response.json();
+  }
+
+  useEffect(() => {
+    console.log('girdi')
+    getData().then((res) => setJobData(res));
+  }, []);
   return (
     <div id="job-history" className="timeline-container  bg-blue-950 mt-2">
       <VerticalTimeline>
         <VerticalTimelineElement
           dateClassName="text-zinc-50 "
           date="2024-09-24"
-          iconStyle={{  background: "#fff", color: "#172554" }}
+          iconStyle={{ background: "#fff", color: "#172554" }}
           icon={<School />}
         >
           <h3 className="vertical-timeline-element-title">
