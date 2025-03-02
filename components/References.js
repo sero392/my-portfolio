@@ -3,9 +3,10 @@ import { Star } from "lucide-react";
 import "../styles/references.css";
 import { memo } from "react";
 
+
 async function getData() {
-  const url = process.env.PUBLIC_NEXT_API_URL;
-  const response = await GetData(url + "api/references");
+  const siteURL = process.env.NEXT_PUBLIC_SITE_URL;
+  const response = await GetData( siteURL + "api/references");
   return await response.json();
 }
 
@@ -33,7 +34,7 @@ export default async function References() {
                       sm:w-[100%]
                       w-[100%]
                       flex flex-col items-center justify-center 
-                       transition-all  duration-700
+                       transition-all  ease-in-out duration-500
                      
                       "
           >

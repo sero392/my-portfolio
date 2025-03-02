@@ -4,9 +4,9 @@ import Image from "next/image";
 import TypeWriter from "./TypeWriter";
 
 async function getData() {
-  const url = process.env.PUBLIC_NEXT_API_URL;
+  const url = process.env.NEXT_PUBLIC_SITE_URL;
 
-  const response = await GetData( url + "api/about");
+  const response = await GetData(url + "api/about");
   return await response.json();
 }
 
@@ -14,7 +14,7 @@ export default async function Header() {
   const response = await getData();
   return (
     <div id="header" className="header-container  bg-blue-950 flex flex-wrap flex-col lg:flex-row">
-      <div className="header-left flex flex-col  py-[100px] px-7 order-last lg:order-first">
+      <div className="header-left flex flex-col flex-1  py-[100px] px-7 order-last lg:order-first">
         <div className="header-title text-6xl text-zinc-50">
           Merhaba, Ben Serhan
         </div>
@@ -56,6 +56,7 @@ export default async function Header() {
       <div className="header-right  flex flex-1 justify-center pt-10 lg:pt-0">
         <div className="right-image-container h-full flex">
           <Image
+            priority={true}
             className="border-4 rounded-full shadow-blue-200
             hover:shadow-blue-400
             transition-shadow duration-500 shadow-lg hover:shadow-2xl

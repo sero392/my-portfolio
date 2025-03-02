@@ -3,7 +3,7 @@ import { GetData } from "@/utils/ApiUtil";
 const url = process.env.API_URL;
 
 export async  function GET() {
-  const API_URL = url + "api/jobhistories/";
+  const API_URL = url + "api/skills/";
   const data = await GetData(API_URL);
   return data;
 }

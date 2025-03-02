@@ -10,53 +10,38 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 const Timeline = () => {
-  const [jobData, setJobData] = useState(null);
+  const [jobData, setJobData] = useState([]);
 
   async function getData() {
-    const response = await GetData("api/jobhistory");
+    const siteURL = process.env.NEXT_PUBLIC_SITE_URL;
+    const response = await GetData(siteURL + "api/jobhistory");
     return await response.json();
   }
 
   useEffect(() => {
-    console.log('girdi')
     getData().then((res) => setJobData(res));
   }, []);
+
+  if (jobData.length === 0) return;
   return (
     <div id="job-history" className="timeline-container  bg-blue-950 mt-2">
       <VerticalTimeline>
-        <VerticalTimelineElement
-          dateClassName="text-zinc-50 "
-          date="2024-09-24"
-          iconStyle={{ background: "#fff", color: "#172554" }}
-          icon={<School />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Uludağ Üniversitesi
-          </h3>
-          <p>Yönetim Bilişim Sistemleri - Yüksek Lisans</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          dateClassName="text-zinc-50 "
-          date="2020-07-24"
-          iconStyle={{ background: "#fff", color: "#172554" }}
-          icon={<School />}
-        >
-          <h3 className="vertical-timeline-element-title">MAKÜ</h3>
-          <p>Yönetim Bilişim Sistemleri - Lisans</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          dateClassName="text-zinc-50 "
-          date="2015-02-10"
-          iconStyle={{ background: "#fff", color: "#172554" }}
-          icon={<School />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Kırcılar Anadolu Meslek Lisesi
-          </h3>
-          <p>Bilişim Sistemleri</p>
-        </VerticalTimelineElement>
+        {
+          jobData?.data?.map((m, index) => (
+            <VerticalTimelineElement
+              key={index}
+              dateClassName="text-zinc-50 "
+              date={m.DateRange}
+              iconStyle={{ background: "#fff", color: "#172554" }}
+              icon={<School />}
+            >
+              <h3 className="vertical-timeline-element-title">
+                {m.OrganisationName}
+              </h3>
+              <p>{m.Position}</p>
+            </VerticalTimelineElement>
+          ))
+        }
       </VerticalTimeline>
     </div>
   );
