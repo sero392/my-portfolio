@@ -63,7 +63,7 @@ export default async function Header() {
              m-auto border-blue-50"
             width={250}
             height={250}
-            alt="Serhan Çelik"
+            alt="Serhan Çelixk"
             src="/images/S.jpg"
           />
         </div>
