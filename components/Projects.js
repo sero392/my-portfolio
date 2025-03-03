@@ -37,8 +37,8 @@ export default async function Projects() {
 
               <div className="project-tags mt-2 flex gap-3 mt-5">
                 {
-                  m.project_technologies.map((m) => (
-                    <div className="tag bg-gray-400/50 text-gray-300 rounded-full min-w-[50px] text-center px-3 text-sm">
+                  m.project_technologies.map((m,index) => (
+                    <div key={index} className="tag bg-gray-400/50 text-gray-300 rounded-full min-w-[50px] text-center px-3 text-sm">
                       {m.TechName}
                     </div>
                   ))

@@ -44,7 +44,7 @@ export default async function References() {
                 alt="referans resmi"
                 width={100}
                 height={100}
-                src={m.ReferencePhotoURL}
+                src={m.ReferencePhotoURL || 'images/default-user.png'}
               />
             </div>
 

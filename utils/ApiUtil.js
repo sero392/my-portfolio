@@ -9,6 +9,7 @@ export async function GetData(API_URL, IS_AUTH = true) {
     const response = await fetch(API_URL, {
       method: "GET",
       headers: headers,
+      next: { revalidate: 60 }, // Cache yapılandırması
     });
     if (!response.ok) {
       const errorData = await response.json();
