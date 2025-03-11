@@ -26,7 +26,7 @@ export async function GetData(API_URL, IS_AUTH = true) {
 export async function PostData(API_URL, MODEL, IS_AUTH = true) {
   try {
     const headers = {'Content-Type':'application/json'};
-    //Token Ekleme Kontrolü
+    //Token Ekleme
     if (IS_AUTH) headers.Authorization = `Bearer ${TOKEN}`;
 
     const response = await fetch(API_URL, {
