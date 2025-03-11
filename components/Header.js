@@ -23,7 +23,6 @@ export default async function Header() {
           <span className="text-blue-50">
             <TypeWriter
               words={[
-                " Her şeyden önce insanım",
                 " Yazılımcıyım",
                 " Frontend Developer'ım",
                 " Fullstack Developer'ım",

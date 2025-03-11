@@ -15,8 +15,8 @@ export default async function Skills() {
 
       <div className="flex flex-row mt-3 gap-7 flex-wrap justify-start">
         {
-          response?.data?.map((m) => (
-            <div
+          response?.data?.map((m,index) => (
+            <div key={index}
               className="project-container p-10 
           flex flex-col w-[550px] "
             >

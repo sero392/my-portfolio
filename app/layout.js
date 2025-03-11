@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "../styles/globals.css";
+import 'izitoast/dist/css/iziToast.min.css';
+
 export default function RootLayout({ children }) {
   return (
     <html lang="tr" className="scroll-smooth">
