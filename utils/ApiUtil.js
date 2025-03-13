@@ -32,9 +32,7 @@ export async function PostData(API_URL, MODEL, IS_AUTH = true) {
     const response = await fetch(API_URL, {
       method: "POST",
       headers: headers,
-      body: JSON.stringify({
-        data:MODEL
-      }),
+      body: MODEL,
     });
     if (!response.ok) {
       const errorData = await response.json();
