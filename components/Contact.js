@@ -3,11 +3,11 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { PostData } from "@/utils/ApiUtil";
 // import * as iziToast from "izitoast"; // Doğru import yöntemi
 // import "izitoast/dist/css/iziToast.min.css"; // Stil dosyasını da ekle
-import LoaderComp from "./LoaderComp";
+// import LoaderComp from "./LoaderComp";
 
 export default function Contact() {
   class Contact {
@@ -35,7 +35,7 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   return (
     <div id="contact" className=" relative">
-      <LoaderComp isOpen={loading} />
+      {/* <LoaderComp isOpen={loading} /> */}
       <div className="bg-blue-950 text-zinc-50 mt-2 p-10">
         <div className="text-center">
           <span className="text-6xl font-bold text-center">İletişim</span>
