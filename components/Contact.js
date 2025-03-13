@@ -1,12 +1,12 @@
-"use client";
+ "use client";
 
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
 import { PostData } from "@/utils/ApiUtil";
-import * as iziToast from "izitoast"; // Doğru import yöntemi
-import "izitoast/dist/css/iziToast.min.css"; // Stil dosyasını da ekle
+// import * as iziToast from "izitoast"; // Doğru import yöntemi
+// import "izitoast/dist/css/iziToast.min.css"; // Stil dosyasını da ekle
 import LoaderComp from "./LoaderComp";
 
 export default function Contact() {
@@ -50,10 +50,11 @@ export default function Contact() {
               PostData(url + "api/contact", JSON.stringify(values)).then((res) => {
                 if (res.status === 200) {
                   setLoading(false);
-                  iziToast.success({
-                    message: "Mesajınız iletilmiştir.",
-                    title: "Başarılı",
-                  });
+                  // iziToast.success({
+                  //   message: "Mesajınız iletilmiştir.",
+                  //   title: "Başarılı",
+                  // });
+                  alert('Mesajınız Başarıyla İletilmiştir.')
                   resetForm();
                   setSubmitting(false)
                 }
