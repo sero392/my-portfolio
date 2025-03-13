@@ -1,9 +1,11 @@
-const { dirname } = require("path");
-const { fileURLToPath } = require("url");
-const { FlatCompat } = require("@eslint/eslintrc");
+import { FlatCompat } from "@eslint/eslintrc";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+  baseDirectory: dirname(fileURLToPath(import.meta.url)), 
 });
 
-module.exports = [...compat.extends("next/core-web-vitals")];
+export default [
+  ...compat.extends("next/core-web-vitals"),
+];
