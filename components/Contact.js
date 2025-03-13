@@ -5,7 +5,8 @@ import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useEffect, useState } from "react";
 import { PostData } from "@/utils/ApiUtil";
-import iziToast from "izitoast";
+import * as iziToast from "izitoast"; // Doğru import yöntemi
+import "izitoast/dist/css/iziToast.min.css"; // Stil dosyasını da ekle
 import LoaderComp from "./LoaderComp";
 
 export default function Contact() {
