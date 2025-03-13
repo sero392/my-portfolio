@@ -1,7 +1,6 @@
 import { GetData } from "@/utils/ApiUtil";
 import { Star } from "lucide-react";
 import "../styles/references.css";
-import { memo } from "react";
 
 
 async function getData() {

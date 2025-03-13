@@ -1,3 +1,4 @@
+"use client"
 export default function LoaderComp({ isOpen }) {
   return isOpen ? (
     <div className="absolute h-full w-full flex justify-center items-center bg-zinc-50/40">
