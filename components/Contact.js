@@ -43,10 +43,10 @@ export default function Contact() {
           <Formik
             initialValues={new Contact()}
             validationSchema={validationSchema}
-            onSubmit={(values, { resetForm }) => {
+            onSubmit={(values, { resetForm, setSubmitting }) => {
               const url = process.env.NEXT_PUBLIC_SITE_URL;
               setLoading(true);
-              PostData(url + "api/contact", values).then((res) => {
+              PostData(url + "api/contact", JSON.stringify(values)).then((res) => {
                 if (res.status === 200) {
                   setLoading(false);
                   iziToast.success({
@@ -54,6 +54,7 @@ export default function Contact() {
                     title: "Başarılı",
                   });
                   resetForm();
+                  setSubmitting(false)
                 }
               });
             }}
